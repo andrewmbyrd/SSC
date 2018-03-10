@@ -40,7 +40,7 @@ git commit -m"ENTER YOUR MESSAGE HERE"
 * The commit message should be a brief explanations of the changes you've made to the code. This command wraps whatever changes are in the "staging area" into a "commit"
 * Finally
 ```bash
-git push origin master
+git push -u origin master
 ```
 
 It's gonna ask you for your login credentials to github
