@@ -1,6 +1,6 @@
 Aaron, in order to get sync'd up with this github "repo" do the following:
 * If you haven't already, [install github](https://desktop.github.com/)
-* From the `git Shell` tool that should come with Github, [navigate into a Directory](https://www.digitalcitizen.life/command-prompt-how-use-basic-commands) into which you want to put this repo 
+* From the `git Shell` tool that should come with Github, [navigate into a Directory](https://www.digitalcitizen.life/command-prompt-how-use-basic-commands) into which you want to put this repo
 * the following command will create a new Directory in whatever Directory your command line is in when you run the command. The directory that is created will be the root of our project. It will be called `SSC`
 ```bash
 git clone https://github.com/andrewmbyrd/SSC.git
@@ -23,12 +23,12 @@ git config --user.name "{however you want your name to appear on commits}"
 
 ### Make some changes to the code base and push them up
 * Add literally anything to this document, and then save it. Just so it's different.
-* Run: 
+* Run:
 ```bash
 git status
 ```
 * You should see a red file in your command line called README.md
-* Then do 
+* Then do
 ```bash
 git add --all
 ```
@@ -44,5 +44,4 @@ git push -u origin master
 ```
 
 It's gonna ask you for your login credentials to github
-*git only cares about "commits" when it comes to `pushing` stuff*
-
+*git only cares about "commits" when it comes to `pushing` stuff ya know*
