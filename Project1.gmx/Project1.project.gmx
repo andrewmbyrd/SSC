@@ -4,7 +4,9 @@
     <Config>Configs\Default</Config>
   </Configs>
   <NewExtensions/>
-  <sounds name="sound"/>
+  <sounds name="sound">
+    <sound>sound\snd_playerBullet</sound>
+  </sounds>
   <sprites name="sprites">
     <sprites name="player">
       <sprite>sprites\s_player_right</sprite>
@@ -25,11 +27,10 @@
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
-    <script>scripts\move.gml</script>
-    <script>scripts\get_facing.gml</script>
-    <scripts name="player states">
-      <script>scripts\player_move_state.gml</script>
-      <script>scripts\player_shoot_state.gml</script>
+    <script>scripts\getFacing.gml</script>
+    <scripts name="PlayerActions">
+      <script>scripts\handlePlayerMovement.gml</script>
+      <script>scripts\handlePlayerShooting.gml</script>
     </scripts>
     <script>scripts\get_input.gml</script>
   </scripts>
@@ -37,7 +38,7 @@
     <object>objects\o_player1</object>
     <object>objects\o_solid</object>
     <object>objects\o_input</object>
-    <object>objects\o_player_bullet</object>
+    <object>objects\o_playerBullet</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room0</room>

@@ -1,6 +1,7 @@
-///move(hspd, vspd)
-var hspd = argument0;
-var vspd = argument1;
+
+///Movement
+var hspd = (o_input.right - o_input.left)*moveSpeed;
+var vspd = (o_input.down - o_input.up)*moveSpeed;
 
 //horizontal movement
 if (!place_meeting(x + hspd, y, o_solid))
@@ -26,8 +27,11 @@ if (!moved)
 {
     var dir = point_direction(0,0, hspd, vspd);
     image_speed = .2;
-    facing = getFacing(dir);
+    if (movementCanUpdateFacing)
+    {
+        facing = getFacing(dir);
+    }
 }
 
-//return true if we are able to move
-return moved;
+
+ 

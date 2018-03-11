@@ -25,15 +25,17 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>lives = 5;
+            <string>///Initialize Player
+lives = 5;
 continues = 3;
-can_shoot = true;
-shooting = false;
-
-spd = 6; //movement speed
+canShoot = true;
+isShooting = false;
+moveSpeed = 6; 
 image_speed = 0;
 facing = RIGHT;
-state = player_move_state;
+shootingCooldown = 4;
+movementUpdatesFacingCooldown = 8;
+movementCanUpdateFacing = true;
 
 //sprite array
 sprite[RIGHT] = s_player_right;
@@ -44,6 +46,55 @@ sprite[U_RIGHT] = s_player_uright;
 sprite[DOWN] = s_player_down;
 sprite[D_LEFT] = s_player_dleft;
 sprite[D_RIGHT] = s_player_dright;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="1">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>movementCanUpdateFacing = true;
+alarm[1] = movementUpdatesFacingCooldown;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Re-enable Shooting
+canShoot = true;
+alarm[0] = shootingCooldown;
 </string>
           </argument>
         </arguments>
@@ -66,23 +117,13 @@ sprite[D_RIGHT] = s_player_dright;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// control the state
-script_execute(state);
+            <string>/// Listen for events
 
-//shooting
-if (o_input.shoot_right)
-{
-    //update sprite
-    sprite_index = sprite[RIGHT];
-    
-    //shoot a bullet
-    if (can_shoot)
-    {
-        can_shoot = false;
-        alarm[0] = 10;
-        instance_create(0, 0, o_player_bullet);
-    }
-}
+//update shot/position
+script_execute(handlePlayerShooting);
+//update movement/position
+script_execute(handlePlayerMovement);
+
 
 //update the sprite
 sprite_index = sprite[facing];
