@@ -21,6 +21,7 @@
       <sprite>sprites\s_player_bullet</sprite>
     </sprites>
     <sprite>sprites\s_mask</sprite>
+    <sprite>sprites\dumb</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background0</background>
@@ -33,12 +34,20 @@
       <script>scripts\handlePlayerShooting.gml</script>
     </scripts>
     <script>scripts\get_input.gml</script>
+    <scripts name="EnemyActions">
+      <script>scripts\enterArena.gml</script>
+    </scripts>
+    <scripts name="EnemySpawnerActions">
+      <script>scripts\createEnemy.gml</script>
+    </scripts>
   </scripts>
   <objects name="objects">
     <object>objects\o_player1</object>
     <object>objects\o_solid</object>
     <object>objects\o_input</object>
     <object>objects\o_playerBullet</object>
+    <object>objects\obj_dumb</object>
+    <object>objects\obj_EnemySpawner</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room0</room>
