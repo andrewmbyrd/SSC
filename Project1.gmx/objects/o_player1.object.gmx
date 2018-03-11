@@ -26,15 +26,14 @@
           <argument>
             <kind>1</kind>
             <string>///Initialize Player
-lives = 5;
-continues = 3;
+global.p1Lives = 5;
+global.continues = 3;
 canShoot = true;
 isShooting = false;
 moveSpeed = 6; 
 image_speed = 0;
 facing = RIGHT;
 shootingCooldown = 4;
-movementUpdatesFacingCooldown = 8;
 movementCanUpdateFacing = true;
 
 //sprite array
@@ -46,30 +45,6 @@ sprite[U_RIGHT] = s_player_uright;
 sprite[DOWN] = s_player_down;
 sprite[D_LEFT] = s_player_dleft;
 sprite[D_RIGHT] = s_player_dright;
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="2" enumb="1">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>movementCanUpdateFacing = true;
-alarm[1] = movementUpdatesFacingCooldown;
 </string>
           </argument>
         </arguments>
