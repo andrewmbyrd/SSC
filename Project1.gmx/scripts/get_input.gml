@@ -7,7 +7,7 @@ left = keyboard_check(ord('A'));
 right = keyboard_check(ord('D'));
 
 // shooting input
-shoot_up = keyboard_check(vk_up);
-shoot_down = keyboard_check(vk_down);
-shoot_left = keyboard_check(vk_left);
-shoot_right = keyboard_check(vk_right);
+shootUp = keyboard_check(vk_up);
+shootDown = keyboard_check(vk_down);
+shootLeft = keyboard_check(vk_left);
+shootRight = keyboard_check(vk_right);
