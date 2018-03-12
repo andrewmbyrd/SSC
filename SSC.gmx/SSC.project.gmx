@@ -6,6 +6,7 @@
   <NewExtensions/>
   <sounds name="sound">
     <sound>sound\snd_playerBullet</sound>
+    <sound>sound\snd_PlayerDie</sound>
   </sounds>
   <sprites name="sprites">
     <sprites name="player">
@@ -38,19 +39,20 @@
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
+    <script>scripts\checkInRoom.gml</script>
+    <script>scripts\get_input.gml</script>
     <script>scripts\getFacing.gml</script>
     <scripts name="PlayerActions">
       <script>scripts\handlePlayerMovement.gml</script>
       <script>scripts\handlePlayerShooting.gml</script>
     </scripts>
-    <script>scripts\basicEnemyMovement.gml</script>
-    <script>scripts\get_input.gml</script>
     <scripts name="enemySpawnerActions">
-      <script>scripts\createEnemy.gml</script>
+      <script>scripts\createEnemyGroup.gml</script>
     </scripts>
-    <script>scripts\basicEnemyAttack.gml</script>
     <scripts name="enemyActions">
       <script>scripts\enterArena.gml</script>
+      <script>scripts\basicEnemyAttack.gml</script>
+      <script>scripts\basicEnemyMovement.gml</script>
     </scripts>
   </scripts>
   <objects name="objects">
@@ -59,10 +61,14 @@
       <object>objects\o_enemy1</object>
     </objects>
     <object>objects\o_solid</object>
-    <object>objects\o_input</object>
-    <object>objects\o_playerBullet</object>
-    <object>objects\o_EnemySpawner</object>
     <object>objects\obj_dumb</object>
+    <objects name="Destructives">
+      <object>objects\o_playerBullet</object>
+    </objects>
+    <objects name="Controllers">
+      <object>objects\o_EnemySpawner</object>
+      <object>objects\o_input</object>
+    </objects>
   </objects>
   <rooms name="rooms">
     <room>rooms\room0</room>

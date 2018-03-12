@@ -1,5 +1,4 @@
-
-
+//begin walking into the arena from whatever door enemy was spawned at
 if (y < 0)
 {
     direction = 270;
