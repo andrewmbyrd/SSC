@@ -4,7 +4,7 @@ var vertical = random(2)
 var flip = 1;
 if (random(2) <= 1)
 {
-    flip *= -1;
+    flip = -1;
 }
 
 if (vertical <= 1)

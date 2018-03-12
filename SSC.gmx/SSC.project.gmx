@@ -31,6 +31,7 @@
       <sprite>sprites\s_enemy1_uright</sprite>
     </sprites>
     <sprite>sprites\s_mask</sprite>
+    <sprite>sprites\s_dumb</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background0</background>
@@ -44,7 +45,13 @@
     </scripts>
     <script>scripts\basicEnemyMovement.gml</script>
     <script>scripts\get_input.gml</script>
+    <scripts name="enemySpawnerActions">
+      <script>scripts\createEnemy.gml</script>
+    </scripts>
     <script>scripts\basicEnemyAttack.gml</script>
+    <scripts name="enemyActions">
+      <script>scripts\enterArena.gml</script>
+    </scripts>
   </scripts>
   <objects name="objects">
     <object>objects\o_player1</object>
@@ -54,6 +61,8 @@
     <object>objects\o_solid</object>
     <object>objects\o_input</object>
     <object>objects\o_playerBullet</object>
+    <object>objects\o_EnemySpawner</object>
+    <object>objects\obj_dumb</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room0</room>
