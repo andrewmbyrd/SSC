@@ -34,6 +34,7 @@ shouldApproach = true; //follow when true, random dir when false
 wanderCooldown = 20; // how long he until he chases
 approachCooldown = 100; // how long until he moves randomly
 attackCooldown = 10;
+facing = LEFT;
 
 //set random dir alarm and start moving
 alarm[0] = approachCooldown;
@@ -74,6 +75,7 @@ sprite[D_RIGHT] = s_enemy1_dright;
             <string>///allow to move toward player and set alarm[0]
 shouldApproach = true;
 alarm[0] = approachCooldown;
+
 </string>
           </argument>
         </arguments>
@@ -125,6 +127,9 @@ speed = enemySpeed;
             <string>alarm[2] = wanderCooldown;
 shouldApproach = false;
 direction = random(360);
+facing = getFacing(direction);
+
+
 </string>
           </argument>
         </arguments>
@@ -157,7 +162,7 @@ else
 {
     basicEnemyMovement();
 }
-
+sprite_index = sprite[facing];
 
 </string>
           </argument>
