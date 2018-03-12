@@ -12,6 +12,7 @@ then contines to move toward the player
 if(shouldApproach)
 {
     direction = point_direction(x, y, o_player1.x, o_player1.y);
+    facing = getFacing(direction);
 }    
 
 image_speed = 0;
