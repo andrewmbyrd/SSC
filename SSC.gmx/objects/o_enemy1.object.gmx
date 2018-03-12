@@ -29,11 +29,12 @@
 
 image_speed = 0;
 enemySpeed = 3;
-range = 5; //how close the enemy is before he swings
+range = 3; //how close the enemy is before he swings
 shouldApproach = true; //follow when true, random dir when false
 wanderCooldown = 20; // how long he until he chases
 approachCooldown = 100; // how long until he moves randomly
 attackCooldown = 10;
+score_value = 500; //how many points you get for killing him
 facing = LEFT;
 
 //set random dir alarm and start moving
@@ -72,6 +73,31 @@ sprite[D_RIGHT] = s_enemy1_dright;
             <kind>1</kind>
             <string>///Walk Into the Arena
 enterArena();
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="1" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///give points
+score += score_value;
+
 </string>
           </argument>
         </arguments>
@@ -205,14 +231,15 @@ sprite_index = sprite[facing];
         <exetype>2</exetype>
         <functionname></functionname>
         <codestring></codestring>
-        <whoName>self</whoName>
+        <whoName>other</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>audio_play_sound(snd_PlayerDie,7, false);
-game_restart();
+            <string>///kill the player
+instance_change(o_player_dead, true);
+
 </string>
           </argument>
         </arguments>

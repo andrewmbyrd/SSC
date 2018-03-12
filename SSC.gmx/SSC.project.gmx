@@ -11,6 +11,8 @@
   <sprites name="sprites">
     <sprites name="player">
       <sprite>sprites\s_player_right</sprite>
+      <sprite>sprites\s_shield</sprite>
+      <sprite>sprites\s_shield_depleted</sprite>
       <sprite>sprites\s_player_left</sprite>
       <sprite>sprites\s_player_down</sprite>
       <sprite>sprites\s_player_dleft</sprite>
@@ -18,6 +20,7 @@
       <sprite>sprites\s_player_up</sprite>
       <sprite>sprites\s_player_uright</sprite>
       <sprite>sprites\s_player_uleft</sprite>
+      <sprite>sprites\s_player_dead</sprite>
       <sprite>sprites\s_playermask</sprite>
       <sprite>sprites\s_player_bullet</sprite>
     </sprites>
@@ -30,8 +33,11 @@
       <sprite>sprites\s_enemy1_up</sprite>
       <sprite>sprites\s_enemy1_uleft</sprite>
       <sprite>sprites\s_enemy1_uright</sprite>
+      <sprite>sprites\s_enemy_dead</sprite>
     </sprites>
     <sprite>sprites\s_mask</sprite>
+    <sprite>sprites\s_player_spawn_start</sprite>
+    <sprite>sprites\s_player_spawn_end</sprite>
     <sprite>sprites\s_dumb</sprite>
   </sprites>
   <backgrounds name="background">
@@ -44,6 +50,7 @@
     <script>scripts\getFacing.gml</script>
     <scripts name="PlayerActions">
       <script>scripts\handlePlayerMovement.gml</script>
+      <script>scripts\handlePlayerRespawn.gml</script>
       <script>scripts\handlePlayerShooting.gml</script>
     </scripts>
     <scripts name="enemySpawnerActions">
@@ -56,9 +63,11 @@
     </scripts>
   </scripts>
   <objects name="objects">
+    <object>objects\o_player_dead</object>
     <object>objects\o_player1</object>
     <objects name="enemies">
       <object>objects\o_enemy1</object>
+      <object>objects\o_enemy_dead</object>
     </objects>
     <object>objects\o_solid</object>
     <object>objects\obj_dumb</object>
@@ -68,7 +77,11 @@
     <objects name="Controllers">
       <object>objects\o_EnemySpawner</object>
       <object>objects\o_input</object>
+      <object>objects\o_game_controller</object>
+      <object>objects\o_player_spawn_start</object>
+      <object>objects\o_player_spawn_end</object>
     </objects>
+    <object>objects\o_shield</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room0</room>
