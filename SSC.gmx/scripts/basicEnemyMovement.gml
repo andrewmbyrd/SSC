@@ -9,7 +9,7 @@ then contines to move toward the player
 //var enemy_speed = argument0;
 //to_player = true;
 
-if(shouldApproach)
+if(shouldApproach && instance_exists(o_player1))
 {
     direction = point_direction(x, y, o_player1.x, o_player1.y);
     facing = getFacing(direction);
