@@ -37,7 +37,7 @@ invincible = true;
 movementUpdatesFacingCooldown = 8;
 movementCanUpdateFacing = true;
 
-script_execute(handlePlayerRespawn);
+handlePlayerRespawn();
 
 //sprite array
 sprite[RIGHT] = s_player_right;
@@ -148,13 +148,13 @@ alarm[0] = shootingCooldown;
 if(!respawning)
 {
 //update shot/position
-    script_execute(handlePlayerShooting);
+   handlePlayerShooting();
 //update movement/position
-    script_execute(handlePlayerMovement);
+    handlePlayerMovement();
 }
 else
 {
-    script_execute(handlePlayerRespawn);
+    handlePlayerRespawn();
 }
 
 //update the sprite

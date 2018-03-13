@@ -75,9 +75,7 @@
     <script>scripts\testChance.gml</script>
   </scripts>
   <objects name="objects">
-    <object>objects\o_player_dead</object>
-    <object>objects\o_player1</object>
-    <objects name="enemies">
+    <objects name="Enemies">
       <object>objects\o_enemy1</object>
       <object>objects\o_enemy_parent1</object>
       <object>objects\o_enemy_dead</object>
@@ -89,10 +87,8 @@
     </objects>
     <objects name="Controllers">
       <object>objects\o_EnemySpawner</object>
-      <object>objects\o_input</object>
       <object>objects\o_game_controller</object>
-      <object>objects\o_player_spawn_start</object>
-      <object>objects\o_player_spawn_end</object>
+      <object>objects\o_input</object>
     </objects>
     <objects name="powerups">
       <object>objects\o_pickup_life</object>
@@ -102,6 +98,10 @@
       <object>objects\o_pickup_destroy_all</object>
     </objects>
     <object>objects\o_shield</object>
+    <objects name="Players">
+      <object>objects\o_player1</object>
+      <object>objects\o_player_dead</object>
+    </objects>
   </objects>
   <rooms name="rooms">
     <room>rooms\room0</room>
@@ -120,7 +120,7 @@
     <rtf>help.rtf</rtf>
   </help>
   <TutorialState>
-    <IsTutorial>0</IsTutorial>
+    <IsTutorial>-1</IsTutorial>
     <TutorialName>C:\Users\Aaron\AppData\Local\gamemaker_studio\tutorials\Scrolling_Shooter_Part1\</TutorialName>
     <TutorialPage>9</TutorialPage>
   </TutorialState>
