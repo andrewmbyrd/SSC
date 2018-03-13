@@ -5,9 +5,6 @@ a powerup
 /////////////////////////////////////*/
 
 var test_success;
-var testCooldown = 180;
-
-alarm[0] = testCooldown;
 
 test_success = testChance(4);
 if(test_success)

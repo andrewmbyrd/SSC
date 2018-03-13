@@ -8,7 +8,7 @@ otherwise returns false
 var sides = argument0;
 var my_random;
 
-my_random = round(random(sides));
+my_random = ceil(random(sides));
 if (my_random == 1)
     return true;
 else

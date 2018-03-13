@@ -54,7 +54,7 @@
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
-    <script>scripts\spawnPowerups.gml</script>
+    <script>scripts\testChance.gml</script>
     <script>scripts\checkInRoom.gml</script>
     <script>scripts\get_input.gml</script>
     <script>scripts\increaseSpeed.gml</script>
@@ -72,7 +72,9 @@
       <script>scripts\basicEnemyAttack.gml</script>
       <script>scripts\basicEnemyMovement.gml</script>
     </scripts>
-    <script>scripts\testChance.gml</script>
+    <scripts name="ContollerActions">
+      <script>scripts\spawnPowerups.gml</script>
+    </scripts>
   </scripts>
   <objects name="objects">
     <objects name="Enemies">
