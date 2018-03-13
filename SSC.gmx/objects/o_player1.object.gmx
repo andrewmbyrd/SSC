@@ -33,6 +33,7 @@ moveSpeed = 4;
 image_speed = 0;
 facing = RIGHT;
 shootingCooldown = 7;
+movementCanUpdateFacing = true;
 invincible = true;
 
 
@@ -94,7 +95,7 @@ alarm[0] = shootingCooldown;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Listen for events
+            <string>/// Listen for events. Always update facing direction
 
 if(!respawning)
 {

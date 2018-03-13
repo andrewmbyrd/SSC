@@ -8,7 +8,7 @@
   <parentName>o_pickup_parent</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
-    <event eventtype="2" enumb="0">
+    <event eventtype="2" enumb="1">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -27,7 +27,7 @@
             <kind>1</kind>
             <string>///reset player's speed and go away
 
-myPlayer.speed /= speedFactor;
+o_player1.moveSpeed /= speedFactor;
 instance_destroy();
 </string>
           </argument>
@@ -51,7 +51,7 @@ instance_destroy();
         <arguments>
           <argument>
             <kind>6</kind>
-            <sound>-100</sound>
+            <sound>snd_speedup</sound>
           </argument>
           <argument>
             <kind>3</kind>
@@ -76,14 +76,15 @@ instance_destroy();
           <argument>
             <kind>1</kind>
             <string>///speed up player for a time and hide
-duration = 300;
+var duration = 300;
 speedFactor = 1.5;
-myPlayer = other;
+pickedUp = true;
 
 image_alpha = 0;
 y = -20;
-myPlayer.speed *= speedFactor;
-alarm[0] = duration;
+
+o_player1.moveSpeed *= speedFactor;
+alarm[1] = duration;
 </string>
           </argument>
         </arguments>
