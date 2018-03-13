@@ -30,7 +30,7 @@ lives = 3;
 global.continues = 3;
 score = 0;
 global.playerDeath = false;
-spawnPowerupCooldown = 180;
+spawnPowerupCooldown = 300;
 
 alarm[0] = spawnPowerupCooldown;
 </string>
