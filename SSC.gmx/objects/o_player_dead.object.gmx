@@ -25,17 +25,9 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>image_speed = .35;
+            <string>///Play death animation
+image_speed = .35;
 
-if(lives &gt; 0)
-{
-    lives -= 1;
-    instance_create(o_player_spawn_start.x, o_player_spawn_start.y, o_player1);
-}
-else
-{
-    room_restart();
-}
 </string>
           </argument>
         </arguments>
@@ -82,7 +74,8 @@ else
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>instance_destroy();
+            <string>///Destory Self
+instance_destroy();
 </string>
           </argument>
         </arguments>

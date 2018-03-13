@@ -237,8 +237,8 @@ sprite_index = sprite[facing];
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///kill the player
-instance_change(o_player_dead, true);
+            <string>///Let Controller know player is dead
+global.playerDeath = true;
 
 </string>
           </argument>
