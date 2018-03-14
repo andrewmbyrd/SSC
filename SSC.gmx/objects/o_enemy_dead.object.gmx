@@ -27,7 +27,7 @@
             <kind>1</kind>
             <string>/// stop moving and die
 speed = 0;
-image_speed = .7;
+image_speed = .5;
 </string>
           </argument>
         </arguments>

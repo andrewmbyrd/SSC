@@ -28,12 +28,12 @@
             <string>///enemy init
 
 image_speed = 0;
-enemySpeed = 3;
+enemySpeed = 2;
 range = 3; //how close the enemy is before he swings
 shouldApproach = true; //follow when true, random dir when false
-wanderCooldown = 20; // how long he until he chases
-approachCooldown = 100; // how long until he moves randomly
-attackCooldown = 10;
+wanderCooldown = 30; // how long he until he chases
+approachCooldown = 120; // how long until he moves randomly
+attackCooldown = 15;
 score_value = 500; //how many points you get for killing him
 facing = LEFT;
 
