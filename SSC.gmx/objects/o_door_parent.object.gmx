@@ -25,14 +25,10 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///controller init
-lives = 3;
-global.continues = 3;
-score = 0;
-global.playerDeath = false;
-spawnPowerupCooldown = 300;
+            <string>///Stay still
+image_speed = 0;
+depth = 3;
 
-alarm[0] = spawnPowerupCooldown;
 </string>
           </argument>
         </arguments>
@@ -55,15 +51,15 @@ alarm[0] = spawnPowerupCooldown;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///perform spawnPowerups check
-spawnPowerups();
-alarm[0] = spawnPowerupCooldown;
+            <string>///close
+image_index = 0;
+
 </string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="3" enumb="0">
+    <event eventtype="4" ename="o_enemy1">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -80,52 +76,8 @@ alarm[0] = spawnPowerupCooldown;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///check game-wide events (like player death)
-if (global.playerDeath)
-{
-    global.playerDeath = false;
-    with (o_player1)
-    {
-        instance_change(o_player_dead, true);
-    }
-    if(lives &gt; 0)
-    {
-        lives -= 1;
-        instance_create(-50, room_height / 2 + 30, o_player1);
-    }
-    else
-    {
-        room_restart();
-    }
-}
-
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="8" enumb="64">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>draw_text(10, 64, "Lives: " + string(lives));
-draw_text(10, 94, "Continues: " + string(global.continues));
-draw_text(10, 124, "Score: " + string(score));
-draw_text(10, 154, "moveSpeed: " + string(o_player1.moveSpeed));
-
+            <string>image_index = 2;
+alarm[0] = 100;
 </string>
           </argument>
         </arguments>

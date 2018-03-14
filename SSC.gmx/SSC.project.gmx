@@ -39,21 +39,20 @@
       <sprite>sprites\s_enemy_dead</sprite>
     </sprites>
     <sprite>sprites\s_mask</sprite>
-    <sprite>sprites\s_player_spawn_start</sprite>
     <sprites name="powerups">
       <sprite>sprites\s_pickup_life</sprite>
       <sprite>sprites\s_pickup_shield</sprite>
       <sprite>sprites\s_pickup_speedup</sprite>
       <sprite>sprites\s_pickup_destroy_all</sprite>
     </sprites>
-    <sprite>sprites\s_player_spawn_end</sprite>
     <sprite>sprites\s_dumb</sprite>
-<<<<<<< HEAD
-    <sprite>sprites\s_bottom_door</sprite>
-    <sprite>sprites\s_top_door</sprite>
-=======
     <sprite>sprites\spr_Empty</sprite>
->>>>>>> master
+    <sprites name="Environmental">
+      <sprite>sprites\s_bottom_door</sprite>
+      <sprite>sprites\s_top_door</sprite>
+      <sprite>sprites\s_left_door</sprite>
+      <sprite>sprites\s_right_door</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background">
     <background>background\background0</background>
@@ -61,16 +60,12 @@
   <paths name="paths"/>
   <scripts name="scripts">
     <script>scripts\testChance.gml</script>
-    <script>scripts\checkInRoom.gml</script>
     <script>scripts\get_input.gml</script>
     <script>scripts\getFacing.gml</script>
     <scripts name="PlayerActions">
       <script>scripts\handlePlayerMovement.gml</script>
       <script>scripts\handlePlayerRespawn.gml</script>
       <script>scripts\handlePlayerShooting.gml</script>
-    </scripts>
-    <scripts name="enemySpawnerActions">
-      <script>scripts\createEnemyGroup.gml</script>
     </scripts>
     <scripts name="enemyActions">
       <script>scripts\enterArena.gml</script>
@@ -79,6 +74,7 @@
     </scripts>
     <scripts name="ContollerActions">
       <script>scripts\spawnPowerups.gml</script>
+      <script>scripts\createEnemyGroup.gml</script>
     </scripts>
   </scripts>
   <objects name="objects">
@@ -112,6 +108,9 @@
     <objects name="Environmental">
       <object>objects\o_bottom_door</object>
       <object>objects\o_top_door</object>
+      <object>objects\o_left_door</object>
+      <object>objects\o_right_door</object>
+      <object>objects\o_door_parent</object>
     </objects>
   </objects>
   <rooms name="rooms">
@@ -131,7 +130,7 @@
     <rtf>help.rtf</rtf>
   </help>
   <TutorialState>
-    <IsTutorial>0</IsTutorial>
+    <IsTutorial>-1</IsTutorial>
     <TutorialName>C:\Users\Aaron\AppData\Local\gamemaker_studio\tutorials\Scrolling_Shooter_Part1\</TutorialName>
     <TutorialPage>9</TutorialPage>
   </TutorialState>
