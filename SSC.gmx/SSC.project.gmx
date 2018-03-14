@@ -48,6 +48,8 @@
     </sprites>
     <sprite>sprites\s_player_spawn_end</sprite>
     <sprite>sprites\s_dumb</sprite>
+    <sprite>sprites\s_bottom_door</sprite>
+    <sprite>sprites\s_top_door</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background0</background>
@@ -103,6 +105,10 @@
     <objects name="Players">
       <object>objects\o_player1</object>
       <object>objects\o_player_dead</object>
+    </objects>
+    <objects name="Environmental">
+      <object>objects\o_bottom_door</object>
+      <object>objects\o_top_door</object>
     </objects>
   </objects>
   <rooms name="rooms">
