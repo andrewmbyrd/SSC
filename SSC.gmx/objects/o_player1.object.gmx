@@ -35,6 +35,7 @@ facing = RIGHT;
 shootingCooldown = 7;
 movementCanUpdateFacing = true;
 invincible = true;
+speedIncreased = false;
 
 
 handlePlayerRespawn();
@@ -96,6 +97,9 @@ alarm[0] = shootingCooldown;
           <argument>
             <kind>1</kind>
             <string>/// Listen for events. Always update facing direction
+
+if(global.paused)
+    exit;
 
 if(!respawning)
 {

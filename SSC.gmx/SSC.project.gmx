@@ -10,6 +10,7 @@
     <sound>sound\snd_getLife</sound>
     <sound>sound\snd_destroyAll</sound>
     <sound>sound\snd_PlayerDie</sound>
+    <sound>sound\snd_level1</sound>
   </sounds>
   <sprites name="sprites">
     <sprites name="player">
@@ -44,6 +45,8 @@
       <sprite>sprites\s_pickup_shield</sprite>
       <sprite>sprites\s_pickup_speedup</sprite>
       <sprite>sprites\s_pickup_destroy_all</sprite>
+      <sprite>sprites\s_cash</sprite>
+      <sprite>sprites\s_prize</sprite>
     </sprites>
     <sprite>sprites\s_dumb</sprite>
     <sprite>sprites\spr_Empty</sprite>
@@ -52,7 +55,9 @@
       <sprite>sprites\s_top_door</sprite>
       <sprite>sprites\s_left_door</sprite>
       <sprite>sprites\s_right_door</sprite>
+      <sprite>sprites\s_mine</sprite>
     </sprites>
+    <sprite>sprites\s_explosion</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background0</background>
@@ -75,6 +80,8 @@
     <scripts name="ContollerActions">
       <script>scripts\spawnPowerups.gml</script>
       <script>scripts\createEnemyGroup.gml</script>
+      <script>scripts\handlePlayerDeath.gml</script>
+      <script>scripts\spawnCash.gml</script>
     </scripts>
   </scripts>
   <objects name="objects">
@@ -84,6 +91,7 @@
       <object>objects\o_enemy_dead</object>
     </objects>
     <object>objects\o_solid</object>
+    <object>objects\o_explosion</object>
     <object>objects\obj_dumb</object>
     <objects name="Destructives">
       <object>objects\o_playerBullet</object>
@@ -92,6 +100,7 @@
       <object>objects\o_EnemySpawner</object>
       <object>objects\o_game_controller</object>
       <object>objects\o_input</object>
+      <object>objects\o_continue_timer</object>
     </objects>
     <objects name="powerups">
       <object>objects\o_pickup_life</object>
@@ -100,6 +109,8 @@
       <object>objects\o_pickup_parent</object>
       <object>objects\o_pickup_destroy_all</object>
       <object>objects\o_shield</object>
+      <object>objects\o_cash</object>
+      <object>objects\o_prize</object>
     </objects>
     <objects name="Players">
       <object>objects\o_player1</object>
@@ -111,6 +122,7 @@
       <object>objects\o_left_door</object>
       <object>objects\o_right_door</object>
       <object>objects\o_door_parent</object>
+      <object>objects\o_mine</object>
     </objects>
   </objects>
   <rooms name="rooms">

@@ -6,7 +6,7 @@
   <depth>0</depth>
   <persistent>0</persistent>
   <parentName>o_enemy_parent1</parentName>
-  <maskName>s_playermask</maskName>
+  <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
       <action>
@@ -29,7 +29,7 @@
 
 image_speed = 0;
 enemySpeed = 2;
-range = 3; //how close the enemy is before he swings
+range = 2; //how close the enemy is before he swings
 shouldApproach = true; //follow when true, random dir when false
 wanderCooldown = 30; // how long he until he chases
 approachCooldown = 120; // how long until he moves randomly
@@ -149,6 +149,7 @@ canAct = true;
           <argument>
             <kind>1</kind>
             <string>///allow to move toward player and set alarm[0]
+speed = enemySpeed;
 shouldApproach = true;
 alarm[0] = approachCooldown;
 
@@ -201,6 +202,7 @@ speed = enemySpeed;
           <argument>
             <kind>1</kind>
             <string>///start wandering
+speed = enemySpeed;
 alarm[2] = wanderCooldown;
 shouldApproach = false;
 direction = random(360);
@@ -235,6 +237,26 @@ facing = getFacing(direction);
           <argument>
             <kind>1</kind>
             <string>/// determine whether to move or attack
+
+
+//start pause code
+if(global.paused)
+{
+    if (alarm[0] &gt; 0)
+        alarm[0]++;
+    if (alarm[1] &gt; 0)
+        alarm[1]++;
+    if (alarm[2] &gt; 0)
+        alarm[2]++;
+    if (alarm[3] &gt; 0)
+        alarm[3]++;  
+    
+    speed = 0;  
+    
+    exit;
+}
+//end pause code
+
 if (canAct)
 {
     if(distance_to_object(o_player1) &lt; range)
