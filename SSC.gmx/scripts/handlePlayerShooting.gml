@@ -7,9 +7,8 @@ if (xComponent !=0 || yComponent != 0)
         var dir = point_direction(x, y, x + xComponent, y + yComponent);
         var xOffset = x + xComponent*sprite_width;
         var yOffset = y + yComponent*sprite_height;
-        var bullet = instance_create(xOffset, yOffset, o_playerBullet);
-        bullet.direction = dir;
-        bullet.image_angle = dir;
+        //handle fire event for whatever weapon the player currently has
+        script_execute(currentWeapon.fire, dir);
         
         facing = getFacing(dir);
         canShoot = false;
