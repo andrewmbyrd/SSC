@@ -51,7 +51,10 @@ alarm[0] = enemySpawnRate;
           <argument>
             <kind>1</kind>
             <string>///Spawn an enemy group
-createEnemyGroup();
+if (instance_number(o_enemy_parent1) &lt; 100)
+{
+    createEnemyGroup();
+}
 
 enemySpawnRate -= 10;
 if (enemySpawnRate &lt;= 90)
