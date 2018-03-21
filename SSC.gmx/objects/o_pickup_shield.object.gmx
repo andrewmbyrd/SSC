@@ -26,8 +26,17 @@
           <argument>
             <kind>1</kind>
             <string>///give shield
-instance_create(o_player1.x, o_player1.y, o_shield);
-instance_destroy();
+if(o_player1.invincible)
+{
+    instance_destroy(o_shield)
+    instance_create(o_player1.x, o_player1.y, o_shield);
+    instance_destroy();
+}
+else
+{
+    instance_create(o_player1.x, o_player1.y, o_shield);
+    instance_destroy();
+}
 </string>
           </argument>
         </arguments>

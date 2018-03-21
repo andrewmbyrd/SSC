@@ -28,6 +28,7 @@
             <string>///reset player's speed and go away
 
 o_player1.moveSpeed /= speedFactor;
+o_player1.speedIncreased = false;
 instance_destroy();
 </string>
           </argument>
@@ -83,8 +84,14 @@ pickedUp = true;
 image_alpha = 0;
 y = -20;
 
-o_player1.moveSpeed *= speedFactor;
-alarm[1] = duration;
+if(!o_player1.speedIncreased)
+{
+    o_player1.speedIncreased = true;
+    o_player1.moveSpeed *= speedFactor;
+    alarm[1] = duration;
+}
+
+
 </string>
           </argument>
         </arguments>

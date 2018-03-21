@@ -11,3 +11,6 @@ shootUp = keyboard_check(vk_up);
 shootDown = keyboard_check(vk_down);
 shootLeft = keyboard_check(vk_left);
 shootRight = keyboard_check(vk_right);
+
+//other buttons
+pauseButton = keyboard_check_pressed(ord('P'));

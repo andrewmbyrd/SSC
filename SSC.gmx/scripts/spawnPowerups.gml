@@ -18,7 +18,7 @@ if(test_success)
     instance_create(random(room_width), random(room_height), o_pickup_shield);
 }
 
-test_success = testChance(1);
+test_success = testChance(4);
 if(test_success)
 {
     instance_create(random(room_width), random(room_height), o_pickup_speedup);

@@ -26,13 +26,41 @@
           <argument>
             <kind>1</kind>
             <string>///controller init
-lives = 3;
+maxLives = 1; //number of lives the player starts with after using continue
+lives = maxLives;
 global.continues = 3;
 score = 0;
 global.playerDeath = false;
 spawnPowerupCooldown = 300;
-
+spawnCashCooldown = 200;
+global.paused = false;
 alarm[0] = spawnPowerupCooldown;
+alarm[1] = spawnCashCooldown;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="1">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///perform spawn cash check
+spawnCash();
+alarm[1] = spawnCashCooldown;
 </string>
           </argument>
         </arguments>
@@ -81,24 +109,35 @@ alarm[0] = spawnPowerupCooldown;
           <argument>
             <kind>1</kind>
             <string>///check game-wide events (like player death)
-if (global.playerDeath)
+
+//start pause code
+if(o_input.pauseButton)
 {
-    global.playerDeath = false;
-    with (o_player1)
-    {
-        instance_change(o_player_dead, true);
-    }
-    if(lives &gt; 0)
-    {
-        lives -= 1;
-        instance_create(-50, room_height / 2 + 30, o_player1);
-    }
+    if(global.paused == false)
+        global.paused = true;
     else
+        global.paused = false;
+}
+if(global.paused)
+{    
+    if (alarm[0] &gt; 0)
     {
-        room_restart();
+        alarm[0]++;
+    }
+    
+    if(alarm[1] &gt; 0)
+    {
+        alarm[1]++;
     }
 }
 
+//end pause code
+
+if (global.playerDeath)
+{
+    global.playerDeath = false;
+    handlePlayerDeath();
+}
 </string>
           </argument>
         </arguments>
@@ -124,7 +163,8 @@ if (global.playerDeath)
             <string>draw_text(10, 64, "Lives: " + string(lives));
 draw_text(10, 94, "Continues: " + string(global.continues));
 draw_text(10, 124, "Score: " + string(score));
-draw_text(10, 154, "moveSpeed: " + string(o_player1.moveSpeed));
+if(instance_exists(o_player1))
+    draw_text(10, 154, "moveSpeed: " + string(o_player1.moveSpeed));
 
 </string>
           </argument>
