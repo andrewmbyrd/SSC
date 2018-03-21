@@ -1,5 +1,7 @@
-var xposition = random(room_width);
-var yposition = random(room_height);
+var xOffset = 200;
+var yOffset = 400;
+var xposition = random_range(xOffset, room_width - xOffset);
+var yposition = random_range(yOffset, room_height - yOffset);
 
 
 //spawn cash
@@ -18,6 +20,6 @@ if(test_success)
 test_success = testChance(4);
 if(test_success)
 {
-    instance_create(random(room_width), random(room_height), o_prize);
+    instance_create(random_range(xOffset, room_width - xOffset), random_range(yOffset, room_height - yOffset), o_prize);
 }
 
