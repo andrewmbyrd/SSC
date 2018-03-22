@@ -61,6 +61,7 @@
     <sprites name="Weapons">
       <sprite>sprites\s_Scattershot</sprite>
     </sprites>
+    <sprite>sprites\s_scatterBullet</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background0</background>
@@ -85,6 +86,7 @@
       <script>scripts\createEnemyGroup.gml</script>
       <script>scripts\handlePlayerDeath.gml</script>
       <script>scripts\spawnCash.gml</script>
+      <script>scripts\spawnWeapons.gml</script>
     </scripts>
     <scripts name="WeaponActions">
       <script>scripts\scatterShotFire.gml</script>
@@ -102,6 +104,7 @@
     <object>objects\obj_dumb</object>
     <objects name="Destructives">
       <object>objects\o_playerBullet</object>
+      <object>objects\o_scatterBullet</object>
     </objects>
     <objects name="Controllers">
       <object>objects\o_EnemySpawner</object>

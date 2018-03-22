@@ -51,10 +51,10 @@ fire = scatterShotFire;
           <argument>
             <kind>1</kind>
             <string>///Give player the gun
-with(other)
-{
 
-}
+other.currentWeapon = self;
+other.shootingCooldown = 12;
+
 </string>
           </argument>
         </arguments>
